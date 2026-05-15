@@ -6,7 +6,13 @@ export const parseDataToCsvText = (data) => {
   const vaultsToExport = []
 
   const typeSpecificFields = {
-    login: ['username', 'password', 'passwordUpdatedAt', 'websites'],
+    login: [
+      'username',
+      'password',
+      'passwordUpdatedAt',
+      'otpInput',
+      'websites'
+    ],
     creditCard: ['name', 'number', 'expireDate', 'securityCode', 'pinCode'],
     identity: [
       'fullName',
@@ -92,6 +98,7 @@ export const parseDataToCsvText = (data) => {
         username: data.username || '',
         password: data.password || '',
         passwordUpdatedAt: data.passwordUpdatedAt || '',
+        otpInput: data.otpInput || '',
         websites: (data.websites || []).join(';'),
 
         name: data.name || '',

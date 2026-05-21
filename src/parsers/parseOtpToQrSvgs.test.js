@@ -1,10 +1,14 @@
-import { parseOtpToQrSvgs } from './parseOtpToQrSvgs'
-
-jest.mock('@tetherto/pear-apps-utils-qr', () => ({
-  generateQRCodeSVG: jest.fn(async (uri) => `<svg data-uri="${uri}"/>`)
-}))
+jest.mock(
+  '@tetherto/pear-apps-utils-qr',
+  () => ({
+    generateQRCodeSVG: jest.fn(async (uri) => `<svg data-uri="${uri}"/>`)
+  }),
+  { virtual: true }
+)
 
 import { generateQRCodeSVG } from '@tetherto/pear-apps-utils-qr'
+
+import { parseOtpToQrSvgs } from './parseOtpToQrSvgs'
 
 const totp = (overrides = {}) => ({
   secret: 'JBSWY3DPEHPK3PXP',

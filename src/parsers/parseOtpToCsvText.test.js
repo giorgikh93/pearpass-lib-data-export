@@ -35,9 +35,7 @@ describe('parseOtpToCsvText', () => {
 
     const result = parseOtpToCsvText(data)
     expect(result).toHaveLength(1)
-    expect(result[0].filename).toBe(
-      'PearPass_2FA_2024_06_01T12_34_56_789Z.csv'
-    )
+    expect(result[0].filename).toBe('PearPass_2FA_2024_06_01T12_34_56_789Z.csv')
 
     const lines = result[0].data.split('\n')
     expect(lines[0]).toBe(

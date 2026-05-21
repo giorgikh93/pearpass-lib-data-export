@@ -27,10 +27,10 @@ describe('parseDataToCsvText', () => {
     expect(result).toHaveLength(1)
     expect(result[0].filename).toMatch(/^PearPass_Personal_Vault_/)
     expect(result[0].data).toContain(
-      'type,vaultName,title,username,password,passwordUpdatedAt,websites,note,customFields,folder,isFavorite,createdAt,updatedAt'
+      'type,vaultName,title,username,password,passwordUpdatedAt,otpInput,websites,note,customFields,folder,isFavorite,createdAt,updatedAt'
     )
     expect(result[0].data).toContain(
-      '"login","Personal Vault","GitHub","user1","pass1","","https://github.com","","","Dev","true","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
+      '"login","Personal Vault","GitHub","user1","pass1","","","https://github.com","","","Dev","true","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
     )
   })
 
@@ -147,7 +147,7 @@ describe('parseDataToCsvText', () => {
     const result = parseDataToCsvText(data)
     expect(result).toHaveLength(1)
     expect(result[0].data).toContain(
-      '"login","TestVault","NoUsernamePassword","","","","","","","","false","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
+      '"login","TestVault","NoUsernamePassword","","","","","","","","","false","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
     )
   })
 
@@ -241,13 +241,13 @@ describe('parseDataToCsvText', () => {
     expect(result).toHaveLength(1)
     // Should include both login fields and passPhrase field
     expect(result[0].data).toContain(
-      'type,vaultName,title,username,password,passwordUpdatedAt,websites,passPhrase,note,customFields,folder,isFavorite,createdAt,updatedAt'
+      'type,vaultName,title,username,password,passwordUpdatedAt,otpInput,websites,passPhrase,note,customFields,folder,isFavorite,createdAt,updatedAt'
     )
     expect(result[0].data).toContain(
-      '"login","MixedVault","GitHub Login","user1","pass1","","","","","","","false","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
+      '"login","MixedVault","GitHub Login","user1","pass1","","","","","","","","false","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
     )
     expect(result[0].data).toContain(
-      '"passPhrase","MixedVault","Secret Phrase","","","","","my-secret-phrase","","","","false","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
+      '"passPhrase","MixedVault","Secret Phrase","","","","","","my-secret-phrase","","","","false","2024-01-01T00:00:00Z","2024-01-02T00:00:00Z"'
     )
   })
 

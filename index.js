@@ -1,2 +1,5 @@
 export { parseDataToCsvText } from './src/parsers/parseDataToCsvText'
 export { parseDataToJson } from './src/parsers/parseDataToJson'
+export { parseOtpToCsvText } from './src/parsers/parseOtpToCsvText'
+export { parseOtpToJson } from './src/parsers/parseOtpToJson'
+export { parseOtpToQrSvgs } from './src/parsers/parseOtpToQrSvgs'
